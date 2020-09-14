@@ -1,0 +1,13 @@
+{
+  "name": "discordbot-example",
+  "version": "1.0.0",
+  "description": "A short example to use the URL song utilities module with the api discord.js.",
+  "main": "main.js",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "url-song-utilities": "^1.0.1"
+  },
+  "devDependencies": {},
+  "author": "Zerio",
+  "license": "ISC"
+}
