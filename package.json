@@ -5,7 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "discord.js": "^12.3.1",
-    "url-song-utilities": "^1.0.1"
+    "url-song-utilities": "^1.0.2"
   },
   "devDependencies": {},
   "author": "Zerio",
