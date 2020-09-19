@@ -8,17 +8,19 @@ const client = new discord.Client();
 client.on("message", async message => {
     //If '<prefix>download' is typed
     if (message.content.startsWith("!download")) {
+        //Retrieving message content
+        let args = message.content.split(' ').slice(1);
         //The bot will need the fs module function to save the file
         const { createWriteStream } = require("fs");
         //The bot will search for the music
-        await player.searchSong('Halsey - Without Me').then(async song => {
+        await player.searchSong(args.join(" ")).then(async song => {
             await player.download(song.url).then(stream => {
                 //Prevention message
                 message.channel.send('Download in progress...');
                 //The bot will download the file with the name it has found
                 stream.pipe(createWriteStream('./download/' + song.title + '.mp3')).on('finish', () => {
                     //When the file will be downloaded the bot will send back a message
-                    return message.channel.send('Music downloaded !');
+                    return message.channel.send('Music : ' + song.title + ' downloaded !');
                 })
             })
         }).catch(err => {
